@@ -11,16 +11,10 @@ public class GraphAnimator : MonoBehaviour
     [SerializeField] private UILineRenderer[] _lines;
     [SerializeField] private float _time = 0.5f;
 
-    /// <summary>
-    /// When gameobject gets enabled
-    /// </summary>
     private void OnEnable()
     {
         AnimateLines();
     }
-    /// <summary>
-    /// Animates all lines getting drawn
-    /// </summary>
     private void AnimateLines()
     {
         foreach(UILineRenderer line in _lines)
@@ -28,20 +22,11 @@ public class GraphAnimator : MonoBehaviour
             AnimateLine(line);
         }
     }
-    /// <summary>
-    /// Gets points from lineRender to animate a line
-    /// </summary>
-    /// <param name="lineRenderer"></param>
     private void AnimateLine(UILineRenderer lineRenderer)
     {
         List<Vector2> points = new List<Vector2>(lineRenderer.Points);
         Animate(lineRenderer, points);
     }
-    /// <summary>
-    /// Animates lines from points
-    /// </summary>
-    /// <param name="lineRenderer"></param>
-    /// <param name="points"></param>
     private void Animate(UILineRenderer lineRenderer, List<Vector2> points)
     {
         lineRenderer.Points = new List<Vector2>();
@@ -50,14 +35,7 @@ public class GraphAnimator : MonoBehaviour
             AnimatePoint(lineRenderer, index, new Vector2(0, 4), points[index]);
         }
     }
-    /// <summary>
-    /// Animates a line from pointA to pointB
-    /// </summary>
-    /// <param name="lineRenderer"></param>
-    /// <param name="index"></param>
-    /// <param name="pointA"></param>
-    /// <param name="pointB"></param>
-    public void AnimatePoint(UILineRenderer lineRenderer, int index, Vector2 pointA, Vector2 pointB)
+    private void AnimatePoint(UILineRenderer lineRenderer, int index, Vector2 pointA, Vector2 pointB)
     {
         LeanTween.delayedCall(_time * index, () =>
         {
@@ -75,13 +53,6 @@ public class GraphAnimator : MonoBehaviour
             }, pointA, pointB, _time);
         });
     }
-    /// <summary>
-    /// Animates a line in an live graph from pointA to pointB
-    /// </summary>
-    /// <param name="lineRenderer"></param>
-    /// <param name="index"></param>
-    /// <param name="pointA"></param>
-    /// <param name="pointB"></param>
     public void AnimatePointLive(UILineRenderer lineRenderer, int index, Vector2 pointA, Vector2 pointB)
     {
         LeanTween.delayedCall(_time * index, () =>

@@ -83,6 +83,7 @@ public class UIGridRenderer : Graphic
         vertex.position = new Vector3(xPosition + (cellWidth - distance), yPosition + distance);
         vertexHelper.AddVert(vertex);
 
+
         int offset = index * 8;
         //Left Edge
         vertexHelper.AddTriangle(offset + 0, offset + 1, offset + 5);
