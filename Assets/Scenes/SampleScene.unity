@@ -957,9 +957,8 @@ MonoBehaviour:
   statsManager: {fileID: 1179055393}
   gridRenderer: {fileID: 586633361}
   lineRenderer: {fileID: 586633360}
-  _minimumPopulation: 0
-  _maximumPopulation: 1000
-  _maxPoints: 30
+  _maxX: 20
+  _maxY: 1000
 --- !u!114 &586633360 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5802633802236077892, guid: 473d5054b365a804592a40d71965dfba, type: 3}
@@ -1228,7 +1227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
